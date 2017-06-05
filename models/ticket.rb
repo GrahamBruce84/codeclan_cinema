@@ -31,7 +31,7 @@ class Ticket
     INNER JOIN tickets
     ON customers.id = tickets.customer_id
     INNER JOIN films
-    ON films.id = tickets.film_id;"
+    ON films.id = tickets.film_id WHERE customers.id = #{@id};"
     result = SqlRunner.run(sql)
     return result.map {|ticket_details| Details.new(ticket_details)}
   end
@@ -42,7 +42,7 @@ class Ticket
     INNER JOIN tickets
     ON films.id = tickets.film_id
     INNER JOIN customers
-    ON customers.id = tickets.customer_id;"
+    ON customers.id = tickets.customer_id WHERE films.id = #{@id};"
     result = SqlRunner.run(sql)
     return result.map {|ticket_details| Details.new(ticket_details)}
   end

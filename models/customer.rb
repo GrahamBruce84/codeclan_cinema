@@ -34,6 +34,8 @@ class Customer
     SqlRunner.run(sql)
   end
   
-  
+  def add_funds_to_customer()
+    
+  end
 
 end
