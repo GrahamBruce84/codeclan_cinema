@@ -47,4 +47,5 @@ class Ticket
     return result.map {|ticket_details| Details.new(ticket_details)}
   end
 
+
 end
